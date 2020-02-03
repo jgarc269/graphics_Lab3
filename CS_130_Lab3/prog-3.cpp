@@ -7,7 +7,8 @@ int main()
 {
     std::vector<double> v(100);
 
-    for(size_t i = v.size()-1; i>=0; i--)
+    // changed i >= 0 to i > 0
+    for(size_t i = v.size()-1; i>0; i--)
         v[i] = cos(i);
 
     std::sort(v.begin(), v.end());

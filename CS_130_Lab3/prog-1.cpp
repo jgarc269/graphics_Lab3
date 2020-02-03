@@ -80,6 +80,7 @@ int main()
 
     std::cout << "sum: " << sum << std::endl;
 
+    a.clear();
     return 0;
 }
 
