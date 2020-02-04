@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cassert>
+#include <vector>
 
 class vec
 {
@@ -37,19 +38,23 @@ public:
     vec location;
 };
 
-void set_names(object* objects, size_t number_objects, const std::string& base_name)
+/*
+void set_names(object objects[], size_t number_objects, const std::string& base_name)
 {
     for(size_t i = 0; i < number_objects; i++)
     {
        objects[i].name = base_name + std::to_string(i);
     }
-    
 }
+*/
 
 int main()
 {
-   sphere * balls = new sphere[10];
-   point * points = new point[10];
+  //sphere * balls = new sphere[10];
+  //point * points = new point[10];
+
+    sphere balls[10];
+    point points[10];
 
     vec origin;
     for(size_t i = 0; i < 3; i++)
@@ -62,16 +67,23 @@ int main()
         points[i].location = origin;
         points[i].location[0] = 0.2 * i;
     }
-    set_names(balls, 10, "ball-");
-    set_names(points, 10, "point-");
+    //set_names(balls, 10, "ball-");
+    //set_names(points, 10, "point-");
+    
+    for(size_t i = 0; i < 10; i++)
+      {
+	balls[i].name = "ball" + std::to_string(i);
+	points[i].name = "point" + std::to_string(i);
+      }
+
 
     for(size_t i = 0; i < 10; i++)
     {
         std::cout << balls[i].name << " " << points[i].name << std::endl;
     }
 
-    delete [] balls;
-    delete [] points;
+    //delete [] balls;
+    //delete [] points;
     
     return 0;
 }

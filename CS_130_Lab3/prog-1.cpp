@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <memory>
 template<class T>
 class array
 {
@@ -20,7 +20,7 @@ public:
 
     ~array()
     {
-        delete [] data;
+      // delete [] data;
     }
 
     T& operator[](size_t n)
@@ -40,12 +40,14 @@ public:
     
     void resize(size_t n)
     {
-        if(n > capacity);
+        if(n > capacity)
         {
-            T * new_data = new T[n];
+	   T * new_data = new T[n];
+	   
             for(size_t i = 0; i < num_entries; i++)
                 new_data[i] = data[i];
-            data = new_data;
+            
+	    data = new_data;
             capacity = n;
         }
     }

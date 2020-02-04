@@ -58,12 +58,12 @@ void print(double x, T extra = "\n")
 
 int main()
 {
-    array a(2);
+    array a(3);
     a[0] = 4;
     a[1] = 5;
     print(a);
 
-    array b(2);
+    array b(3);
     b[0] = 7;
     b[1] = 9;
     print(b);
